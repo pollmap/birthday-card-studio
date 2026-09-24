@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>생일 카드 스튜디오</title>
+  <link rel="stylesheet" href="/studio.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div><p class="eyebrow">CHANHEE'S CARD STUDIO</p><h1>생일 카드 스튜디오</h1><p class="intro">이름과 멘트를 바꾸고, 미리본 뒤 링크로 게시하세요.</p></div>
+      <span class="local-tag">내 PC에서 편집</span>
+    </header>
+    <div class="workspace">
+      <section class="controls" aria-labelledby="edit-title">
+        <div class="section-head"><h2 id="edit-title">카드 편집</h2><p>내용을 바꾸면 오른쪽 미리보기가 갱신됩니다.</p></div>
+        <label class="field"><span>기존 카드 수정</span><select id="existing"><option value="">새 카드 만들기</option></select></label>
+        <form id="card-form">
+          <div class="field-row">
+            <label class="field"><span>받는 분 이름 <b>*</b></span><input name="recipient" required maxlength="30" placeholder="예: 강소정" autocomplete="off"></label>
+            <label class="field"><span>주소 이름 <b>*</b></span><input name="slug" required minlength="2" maxlength="48" pattern="[a-z0-9][a-z0-9-]{1,47}" placeholder="예: sojeong-2027" spellcheck="false" autocomplete="off"><small>영문 소문자·숫자·하이픈</small></label>
+          </div>
+          <label class="field"><span>카드 호칭 <b>*</b></span><input name="salutation" required maxlength="18" placeholder="예: 소정 누님,"></label>
+          <label class="field"><span>축하 문구 <b>*</b></span><input name="message" required maxlength="22" value="생일 축하해!"></label>
+          <label class="field"><span>보내는 사람 <b>*</b></span><input name="signature" required maxlength="30" value="이찬희 드림"></label>
+          <label class="field"><span>링크 미리보기 제목</span><input name="previewTitle" maxlength="54" placeholder="비워두면 호칭 + 축하 문구"></label>
+          <div class="divider"></div>
+          <div class="field-row">
+            <label class="field"><span>분위기</span><select name="theme"><option value="electric">햇살 전기 파티</option><option value="peach">복숭아빛 축하</option></select></label>
+            <label class="field"><span>축하 동작</span><select name="animation"><option value="electric">촛불 켜기 ⚡</option><option value="bow">함께 꾸벅 🙇</option></select></label>
+          </div>
+          <div class="field-row">
+            <label class="field"><span>왼쪽 포켓몬</span><select name="leftCharacter"><option value="pikachu">피카츄</option><option value="pichu">피츄</option><option value="jolteon">쥬피썬더</option></select></label>
+            <label class="field"><span>오른쪽 포켓몬</span><select name="rightCharacter"><option value="pichu">피츄</option><option value="pikachu">피카츄</option><option value="jolteon">쥬피썬더</option></select></label>
+          </div>
+          <div class="actions"><button class="primary" id="publish" type="submit">새 카드 게시하기</button><button class="secondary" id="refresh" type="button">미리보기 다시 재생</button></div>
+          <p class="publish-note">게시한 카드의 링크와 썸네일은 누구나 볼 수 있습니다. 같은 주소 이름으로 다시 게시하면 내용이 갱신됩니다.</p>
+        </form>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+      </section>
+      <section class="preview" aria-labelledby="preview-title">
+        <div class="preview-head"><div><p class="eyebrow">MOBILE PREVIEW</p><h2 id="preview-title">받는 사람의 화면</h2></div><span>세로형 카드</span></div>
+        <div class="phone"><iframe id="card-preview" title="생일 카드 미리보기"></iframe></div>
+      </section>
+    </div>
+  </main>
+  <script src="/studio.js" defer></script>
+</body>
+</html>

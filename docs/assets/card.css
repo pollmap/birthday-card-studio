@@ -1,0 +1,62 @@
+:root { font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; color-scheme: light; }
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { min-width: 300px; min-height: 100svh; margin: 0; padding: 8px; display: grid; place-items: center; overflow-x: hidden; }
+body.theme-electric { background: #edb63f; }
+body.theme-peach { background: #e8b9b4; }
+button { font: inherit; }
+.card { position: relative; isolation: isolate; width: min(430px, calc(100vw - 16px), calc(56.28svh - 9px)); aspect-ratio: 941 / 1672; overflow: hidden; border: 1px solid #fff8e4; border-radius: 21px; box-shadow: 0 22px 65px #5d391735, 0 2px 9px #5d391721; }
+.theme-electric .card { background: #ffe087 url("themes/electric.png") center / 100% 100% no-repeat; color: #382312; }
+.theme-peach .card { background: #f5d8c9 url("themes/peach.png") center / 100% 100% no-repeat; color: #50313b; border-color: #fff0ec; }
+.card::before { content: ""; position: absolute; z-index: 10; inset: 7px; border: 1px solid #fff9dba8; border-radius: 15px; pointer-events: none; }
+.headline { position: absolute; z-index: 8; top: 21%; left: 0; width: 100%; padding: 0 10px; text-align: center; opacity: 0; transform: translateY(15px); }
+.headline h1 { margin: 0; font-size: 39px; font-weight: 900; line-height: 1.18; letter-spacing: -.075em; text-shadow: 0 2px 3px #fff9f5; }
+.headline h1 span { display: block; }
+.theme-electric .accent { color: #ad5a11; }
+.theme-peach .accent { color: #955b75; }
+.scene { position: absolute; inset: 0; overflow: hidden; }
+.character, .cake { position: absolute; pointer-events: none; user-select: none; opacity: 0; will-change: transform, opacity; }
+.character { z-index: 2; bottom: 15%; width: 44%; }
+.character.left { left: -2%; transform: translate(-60px, 24px) rotate(-10deg); }
+.character.right { right: -2%; transform: translate(60px, 24px) rotate(10deg); }
+.character.pokemon-pichu { width: 38%; }
+.character.left.pokemon-pichu { left: 1%; }
+.character.right.pokemon-pichu { right: 1%; }
+.character img, .cake img { display: block; width: 100%; height: auto; filter: drop-shadow(0 8px 6px #65451c30) saturate(.96); }
+.cake { z-index: 4; left: 50%; top: 44%; width: 42%; transform: translate(-50%, 28px) scale(.82); transform-origin: 50% 80%; }
+.theme-peach .cake { top: 46%; width: 39%; }
+.flame { position: absolute; z-index: 5; width: 2.7%; height: 5%; opacity: 0; transform: translate(-50%, -105%) scale(.1); rotate: 45deg; border-radius: 80% 20% 70% 30%; background: #fff9d2; box-shadow: 0 0 5px 2px #fff0a0, 0 0 15px 7px #ffb228b0, 0 0 29px 14px #ffb22850; }
+.flame::after { content: ""; position: absolute; inset: 28% 23% 9%; border-radius: inherit; background: white; }
+.flame:nth-of-type(1) { left: 28.5%; top: 11.2%; }
+.flame:nth-of-type(2) { left: 38%; top: 5.2%; }
+.flame:nth-of-type(3) { left: 49.5%; top: 11.2%; }
+.flame:nth-of-type(4) { left: 62%; top: 5.2%; }
+.flame:nth-of-type(5) { left: 71.5%; top: 12%; }
+.flame.lit { opacity: 1; transform: translate(-50%, -105%) scale(1); animation: flicker 1.2s ease-in-out infinite alternate; }
+#effects { position: absolute; z-index: 6; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.footer { position: absolute; z-index: 8; inset: auto 0 0; height: 10%; display: flex; justify-content: center; align-items: center; }
+.signature { margin: 0; font-size: 15px; font-weight: 700; letter-spacing: -.04em; opacity: 0; transform: translateY(8px); text-shadow: 0 1px 2px #fff8e7; }
+.replay { position: absolute; right: 13px; bottom: 12px; border: 1px solid #ac7a8e77; border-radius: 999px; padding: 7px 9px; background: #fff9eadb; color: #6c4555; font-size: 10px; font-weight: 700; cursor: pointer; opacity: 0; transform: translateY(6px); transition: background .2s, transform .2s; }
+.replay:hover { background: white; transform: translateY(-2px); }
+.replay:focus-visible { outline: 3px solid #955b75; outline-offset: 3px; }
+.card.playing .left { animation: enter-left .85s .2s cubic-bezier(.2,1.5,.42,1) forwards; }
+.card.playing .right { animation: enter-right .85s .45s cubic-bezier(.2,1.5,.42,1) forwards; }
+.card.playing .cake { animation: enter-cake .95s .65s cubic-bezier(.18,1.25,.3,1) forwards; }
+.card.revealed .headline { animation: rise .8s cubic-bezier(.2,.8,.25,1) forwards; }
+.card.revealed .signature { animation: rise .65s .25s ease-out forwards; }
+.card.revealed .character img { animation: happy-bob 2.4s ease-in-out infinite; }
+.card.bowing .character img { transform-origin: 50% 88%; animation: bow 1s ease-in-out 1; }
+.card.bowing .right img { animation-delay: .12s; }
+.card.charged .character img { animation: cheer .55s ease-in-out 1; }
+.card.finished .replay { opacity: 1; transform: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@keyframes enter-left { to { opacity: 1; transform: translate(0,0) rotate(-4deg); } }
+@keyframes enter-right { to { opacity: 1; transform: translate(0,0) rotate(4deg); } }
+@keyframes enter-cake { to { opacity: 1; transform: translate(-50%,0) scale(1); } }
+@keyframes rise { to { opacity: 1; transform: translateY(0); } }
+@keyframes happy-bob { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-9px) rotate(2deg); } }
+@keyframes bow { 0%,100% { transform: translateY(0) rotate(0) scaleY(1); } 48% { transform: translateY(11px) rotate(8deg) scaleY(.79); } }
+@keyframes cheer { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-17px) rotate(-5deg); } }
+@keyframes flicker { 50% { transform: translate(-50%, -112%) scale(.84,1.18); } }
+@media (max-width: 360px) { .headline h1 { font-size: 32px; } .signature { font-size: 13px; } .character { width: 40%; } .character.pokemon-pichu { width: 37%; } .cake { width: 43%; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; } .flame.lit { animation: none; } }
