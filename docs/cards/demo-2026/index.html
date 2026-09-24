@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e8b9b4">
+  <meta name="description" content="샘플 친구 님께 보내는 생일 카드 · 피카츄와 피츄가 함께 축하합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="오늘의 주인공, 생일 축하해!">
+  <meta property="og:description" content="샘플 친구 님께 보내는 생일 카드 · 피카츄와 피츄가 함께 축하합니다.">
+  <meta property="og:url" content="https://pollmap.github.io/birthday-card-studio/cards/demo-2026/">
+  <meta property="og:image" content="https://pollmap.github.io/birthday-card-studio/cards/demo-2026/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="샘플 친구 님께 보내는 생일 카드">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="오늘의 주인공, 생일 축하해!">
+  <meta name="twitter:description" content="샘플 친구 님께 보내는 생일 카드 · 피카츄와 피츄가 함께 축하합니다.">
+  <meta name="twitter:image" content="https://pollmap.github.io/birthday-card-studio/cards/demo-2026/og.png">
+  <link rel="canonical" href="https://pollmap.github.io/birthday-card-studio/cards/demo-2026/">
+  <title>오늘의 주인공, 생일 축하해!</title>
+  <link rel="stylesheet" href="../../assets/card.css">
+</head>
+<body class="theme-peach">
+  <main class="card" id="card" data-animation="bow" aria-label="샘플 친구 님 생일 카드">
+    <header class="headline"><h1><span>오늘의 주인공,</span><span class="accent">생일 축하해!</span></h1></header>
+    <div class="scene" id="scene">
+      <div class="character left pokemon-pikachu"><img src="../../assets/characters/pikachu.png" alt="축하하는 피카츄" width="475" height="475"></div>
+      <div class="character right pokemon-pichu"><img src="../../assets/characters/pichu.png" alt="축하하는 피츄" width="475" height="475"></div>
+      <div class="cake" id="cake"><img src="../../assets/cake.png" alt="딸기 생크림 생일 케이크" width="1254" height="1254"><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i></div>
+      <canvas id="effects" aria-hidden="true"></canvas>
+    </div>
+    <footer class="footer"><p class="signature">이찬희 드림</p><button id="replay" class="replay" type="button" aria-label="생일 카드 다시 보기">↻ 다시 보기</button></footer>
+    <span id="announcement" class="sr-only" role="status" aria-live="polite"></span>
+  </main>
+  <script defer src="../../assets/card.js"></script>
+</body>
+</html>
