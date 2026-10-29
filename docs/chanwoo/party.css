@@ -1,0 +1,16 @@
+/* Keep greeting and controls outside the clipped party stage. */
+.stage{overflow:hidden;contain:paint}
+.rig{width:min(94%,calc(var(--stage-height,440px)*.86));bottom:6%}
+.holding-team{transform-origin:50% 76%}
+.bunny-hop{transform-origin:50% 25%}
+.stage[data-scene=done] .holding-team{animation:party-carriers 1.65s ease-in-out infinite}
+.stage[data-scene=done] .bunny-hop{animation:party-bunny 1.2s ease-in-out infinite}
+.stage[data-scene=done] .leg-left{animation:walk-leg .42s ease-in-out infinite}
+.stage[data-scene=done] .leg-right{animation:walk-leg .42s -.21s ease-in-out infinite}
+.holding-team.reacting{animation:party-carriers .8s ease-in-out!important}
+.bunny-hop.reacting{animation:party-bunny .75s ease-in-out!important}
+@keyframes party-carriers{0%,100%{transform:translateY(0) rotate(0)}12%{transform:translateY(3px) scaleY(.99)}35%{transform:translateY(-17px) rotate(-1deg)}54%{transform:translateY(0)}63%{transform:translateY(3px) scaleY(.99)}82%{transform:translateY(-11px) rotate(1deg)}}
+@keyframes party-bunny{0%,100%{transform:translateY(0) rotate(0)}12%{transform:translateY(4px) scale(1.03,.96)}40%{transform:translateY(-30px) rotate(-5deg) scale(.98,1.03)}67%{transform:translateY(0) rotate(2deg)}76%{transform:translateY(4px) scale(1.03,.96)}90%{transform:translateY(-6px)}}
+@media(max-height:720px){.rig{bottom:3%;width:min(94%,calc(var(--stage-height,320px)*.78))}}
+@media(orientation:landscape) and (max-height:550px){.rig{bottom:0;width:min(94%,calc(var(--stage-height,320px)*.78))}}
+@media(prefers-reduced-motion:reduce){.stage .holding-team,.stage .bunny-hop,.stage .leg,.stage .portrait{animation:none!important;transform:none!important}}
