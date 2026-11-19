@@ -1,0 +1,27 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>og</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=block">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+body{width:1200px;height:630px;overflow:hidden;position:relative;font-family:Jua,sans-serif;color:#4a3328;background:radial-gradient(60% 70% at 85% 30%,#dff2ff,transparent 70%),radial-gradient(#efd6bf 1.6px,transparent 2px) 0 0/26px 26px,#fff6e7}
+.text{position:absolute;left:80px;top:120px;width:520px}
+.eb{font:800 18px/1 -apple-system,"Malgun Gothic",sans-serif;letter-spacing:.22em;color:#ff6b5e;margin:0 0 26px}
+.who{font-size:58px;margin:0}
+.big{font-size:150px;line-height:1;color:#ff6b5e;margin:4px 0 0;text-shadow:5px 0 #fff,-5px 0 #fff,0 5px #fff,0 -5px #fff,4px 4px #fff,-4px -4px #fff,4px -4px #fff,-4px 4px #fff,0 14px 0 #ffcdbd}
+.chip{display:inline-block;margin-top:34px;padding:10px 26px;background:#fff;border:4px solid #4a3328;border-radius:999px;box-shadow:0 5px 0 #4a3328;font-size:34px}
+.squad{position:absolute;right:50px;bottom:40px;width:600px;height:300px}
+.floor{position:absolute;right:-80px;bottom:-120px;width:760px;height:240px;border-radius:50%;background:radial-gradient(closest-side,#ffeacb,#ffdfb6 72%,#fbd3a3)}
+.b{position:absolute;bottom:0;width:190px;height:218px}.b svg{width:100%;height:100%;overflow:visible}
+.c{left:0}.m{left:190px;width:220px;height:253px;bottom:10px}.f{right:0}
+.eyes-open,.m-calm,.eyes-fire{display:none}
+.arm-l{transform:rotate(145deg)}.arm-r{transform:rotate(-145deg)}
+.flags{position:absolute;right:60px;top:40px;display:flex;gap:14px}
+.flags span{width:62px;height:76px;display:grid;justify-items:center;padding-top:10px;font-size:34px;clip-path:polygon(0 0,100% 0,100% 64%,50% 100%,0 64%)}
+.flags span:nth-child(odd){margin-top:12px}
+</style></head><body>
+<div class="flags"><span style="background:#ff9a8c">발</span><span style="background:#ffd45c">표</span><span style="background:#8fdccb">대</span><span style="background:#ffa3b5">성</span><span style="background:#9ccbff">공</span><span style="background:#c9b0f5">!</span></div>
+<div class="text"><p class="eb">PRESENTATION DAY</p><p class="who">우현님, 발표</p><p class="big">파이팅!</p><span class="chip">할 수 있다! 쭉쭉 가자!</span></div>
+<div class="floor"></div>
+<div class="squad"><div class="b c" data-k="chick"></div><div class="b m" data-k="mallang"></div><div class="b f" data-k="frog"></div></div>
+<script src="buddies.js"></script>
+<script>document.querySelectorAll('[data-k]').forEach(e=>e.innerHTML=Buddies.svg(e.dataset.k))</script>
+</body></html>
